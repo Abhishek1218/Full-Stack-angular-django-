@@ -1,0 +1,133 @@
+ 
+<div class="global-container">  
+    <div class="card 
+        login-form"
+    >  
+        <div class="card-body">  
+            <h3 class="card-title 
+                text-center"
+            > 
+                Registration Form 
+            </h3>  
+            <div class="card-text">  
+                <form
+                    [formGroup]="reactiveForm"
+                    (ngSubmit)="navigateToLogin()"
+                >  
+                    <div class="form-group cardSpace">  
+                        <label for="exampleInputEmail1"> 
+                            Enter Email address
+                        </label>  
+                        <input 
+                            type="email" 
+                            class="form-control 
+                            form-control-sm" 
+                            aria-describedby="emailHelp"
+                            name="userEmail"
+                            formControlName="userEmail"
+                        >
+                        <small 
+                            class="text-danger"
+                            *ngIf="isSubmitted && formControls.userEmail.errors"                
+                        >   
+                            <small *ngIf="formControls.userEmail.errors.required">
+                                Please enter your Email
+                            </small>
+                            <small *ngIf="formControls.userEmail.errors.pattern">
+                                Please enter a valid Email
+                            </small>
+                        </small>
+                    </div>
+
+                    <div class="form-group">  
+                        <label>
+                            Enter Password 
+                        </label>   
+                        <input 
+                            type="password" 
+                            class="form-control 
+                            form-control-sm" 
+                            id="exampleInputPassword1"
+                            name="userPassword"
+                            formControlName="userPassword"
+                        >
+                        <small 
+                            class="text-danger"
+                            *ngIf="isSubmitted && formControls.userPassword.errors"                
+                        >   
+                            <small *ngIf="formControls.userPassword.errors.required">
+                                Please enter your password
+                            </small>
+                            <small *ngIf="formControls.userPassword.errors.pattern">
+                                Please must contain eight characters
+                            </small>
+                        </small>                
+                    </div> 
+
+                    <div class="form-group"
+                    >
+                        <label>
+                            User Is Admin?
+                        </label>
+                        <input 
+                            type="text"
+                            class="form-control form-control-sm"
+                            name="isAdmin"
+                            formControlName="isAdmin"                            
+                        >
+
+                    </div>
+
+                    <div class="form-group">  
+                        <label>
+                            Enter Mobile Number
+                        </label>   
+                        <input 
+                            type="number" 
+                            class="form-control 
+                            form-control-sm" 
+                            name="Mobile"
+                            formControlName="Mobile"
+                        >
+                        <small 
+                            class="text-danger"
+                            *ngIf="isSubmitted && formControls.Mobile.errors"                
+                        >   
+                            <small *ngIf="formControls.Mobile.errors.required">
+                                Please enter your phone number
+                            </small>
+                            <small *ngIf="formControls.Mobile.errors.minlength">
+                                Phone number contains atleast 10 digits
+                            </small>
+                        </small>
+                    </div> 
+
+                
+                    <button 
+                        type="submit" 
+                        class="
+                            btn 
+                            btn-primary 
+                            btn-block"
+                    > 
+                        Sign Up 
+                    </button>  
+                    
+                      
+                    <div class="sign-up">  
+                        Already have an account? 
+                        <button 
+                                type="submit" 
+                                class="
+                                    btn 
+                                    btn-link"
+                                    (click)="navigateToLoginPage()"
+                        > 
+                                Log In 
+                        </button>  
+                    </div> 
+                </form>  
+            </div>  
+        </div>  
+    </div>  
+</div>  

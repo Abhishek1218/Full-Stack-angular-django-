@@ -1,0 +1,175 @@
+<nav>
+    <form class="form-inline">
+        <div>            
+        </div>
+
+        <div class="buttons">
+            <div class="navBtn">
+                <!-- <a routerLink="">
+                    <button 
+                        class="btn btn-danger my-2 my-sm-0" 
+                        type="submit">
+                            Logout
+                    </button>
+                </a> -->
+                <button 
+                    class="btn btn-danger my-2 my-sm-0" 
+                    (click)="logout()"
+                    type="submit">
+                        Logout
+                </button>
+            </div>
+        </div>
+    </form>
+</nav>
+
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+          <tr class="table-success">
+            <th scope="col">
+                Email
+            </th>
+            <th scope="col">
+                Admin
+            </th>
+            <th scope="col"
+            >
+                Mobile
+            </th>
+            <th scope="col"
+            >
+                Edit
+            </th>
+            <th scope="col"
+            >
+                Delete
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of users, index as i">
+            <td>
+                <span>
+                    {{data.userEmail}}
+                </span>
+            </td>
+            <td>
+                <span>
+                    {{data.isAdmin}}
+                </span>
+            </td>
+            <td>
+                <span>
+                    {{data.Mobile}}
+                </span>
+            </td>
+            <td>
+                <button 
+                    class="btn btn-warning my-2 my-sm-0" 
+                    type="submit"
+                    (click)="open(content); editValues(i)"
+                    >
+                        Edit
+                </button>
+            </td>
+            <td>
+                <button 
+                    class="btn btn-danger my-2 my-sm-0" 
+                    type="submit"
+                    (click)="delete(data.Id)"
+                    >
+                        Delete
+                </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+
+<!-- Popup to edit the content of table -->
+<ng-template 
+    #content 
+    let-modal
+>
+    <div class="modal-header">
+        <h4 
+            class="modal-title" 
+            id="modal-basic-title"
+        >
+            Update software Data 
+        </h4>
+        <button 
+            type="button" 
+            class="btn-close" 
+            aria-label="Close" 
+            (click)="modal.dismiss('Cross click')"
+        >
+        </button>
+    </div>
+    <div class="modal-body ">
+      <form>
+        <div class="mb-3 form-group">
+            <label for="ID">
+                ID
+            </label>
+            <div class="input-group"
+            >
+                <input 
+                    type="number"
+                    class="form-control"
+                    [(ngModel)]="Id"
+                    name="Id"
+                    disabled
+                >
+            </div>
+            <label for="Email">
+                Email
+            </label>
+            <div class="input-group"
+            >
+                <input 
+                    type="email"
+                    class="form-control"
+                    [(ngModel)]="userEmail"
+                    name="userEmail"
+                    disabled
+                >
+            </div>
+            <label for="Admin">
+                Admin
+            </label>
+            <div class="input-group"
+            >
+                <input 
+                    type="text"
+                    class="form-control"
+                    [(ngModel)]="isAdmin"
+                    name="isAdmin"
+                >
+            </div>
+            <label for="Mobile">
+                Mobile
+            </label>
+            <div class="input-group">
+                <input 
+                    class="form-control" 
+                    type="number"      
+                    [(ngModel)]="Mobile"   
+                    name="Mobile"          
+                >
+            </div>
+        </div>
+
+      </form>
+    </div>
+    <div class="modal-footer">
+        <button 
+            type="button" 
+            class="btn btn-outline-success" 
+            (click)="modal.close('Save click'); saveData()"
+        >   
+            Save
+        </button>
+    </div>
+</ng-template>

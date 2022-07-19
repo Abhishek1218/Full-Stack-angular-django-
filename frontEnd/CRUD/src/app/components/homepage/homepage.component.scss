@@ -1,0 +1,24 @@
+nav{
+	background-color: rgb(223, 223, 248);
+	margin-bottom: 2em;
+	.form-inline{
+		display: flex;
+		justify-content: space-between;
+		.buttons{
+			display: flex;
+			flex-direction: row;
+			.navBtn{
+				margin: 1em 1em;
+	
+				a{
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
+
+
+.input-group{
+	margin-bottom: 1em;
+}

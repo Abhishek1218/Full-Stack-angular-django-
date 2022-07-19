@@ -1,0 +1,94 @@
+<div class="global-container">  
+    <div class="card login-form"
+    >  
+        <div class="card-body">  
+            <h3 class="card-title text-center"
+            > 
+                User Login 
+            </h3>  
+            <div class="card-text">  
+                <form
+                     [formGroup]="reactiveForm"
+                     (ngSubmit)="navigateToHomePage()"
+                >  
+                    <div class="form-group emailBox">  
+                        <label for="exampleInputEmail1"> 
+                            Enter Email address
+                        </label>  
+                        <input 
+                            type="email" 
+                            class="form-control 
+                            form-control-sm" 
+                            id="exampleInputEmail1" 
+                            aria-describedby="emailHelp"
+                            placeholder="Email"
+                            name="email"
+                            formControlName="email"
+                        >
+                        <small 
+                            class="text-danger"
+                            *ngIf="isSubmitted && formControls.email.errors"                
+                        >   
+                            <small *ngIf="formControls.email.errors.required">
+                                Please enter your Email
+                            </small>
+                            <small *ngIf="formControls.email.errors.pattern">
+                                Please enter a valid Email
+                            </small>
+                        </small>
+                    </div>  
+
+                    <div class="form-group password-input">  
+                        <label for="exampleInputPassword1">
+                            Enter Password 
+                        </label>   
+                        <input 
+                            type="password" 
+                            class="form-control
+                                form-control-sm" 
+                            id="exampleInputPassword1"
+                            name="password"
+                            formControlName="password"
+                            placeholder="Password"
+                        > 
+                        <small 
+                            class="text-danger"
+                            *ngIf="isSubmitted && formControls.password.errors"                
+                        >   
+                            <small *ngIf="formControls.password.errors.required">
+                                Please enter your password
+                            </small>
+                            <small *ngIf="formControls.password.errors.pattern">
+                                Please must contain eight characters
+                            </small>
+                        </small>
+                    </div>  
+            
+                    <div class="submitBtn"
+                    >
+                        <button 
+                            type="submit" 
+                            class="btn btn-primary btn-block"
+                               
+                        > 
+                            Log in 
+                        </button>                          
+                    </div>
+                    
+                    
+                    <div class="sign-up">  
+                        Don't have an account? 
+                        <a routerLink="/register">
+                            <button 
+                                type="submit" 
+                                class="btn btn-link"
+                        > 
+                                Sign Up 
+                            </button>  
+                        </a>
+                    </div>  
+                </form>  
+            </div>  
+        </div>  
+    </div>  
+</div>  

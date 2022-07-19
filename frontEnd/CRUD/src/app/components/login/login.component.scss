@@ -1,0 +1,74 @@
+.global-container {    
+    max-width: 40em;
+	background: #FAFAFA;
+	padding: 2em;
+	margin: 4em auto;
+	box-shadow: 0.2em 0.2em 1.5em rgba(0, 0, 0, 0.35);
+	border-radius: 0.8em;
+	border: 0.5em solid #305A72;
+    .login-form {   
+        font-size: 1.2em;
+        .card-body{
+            h3{
+                font-family: cursive;
+                font-size: 1.5em;
+                font-weight: 500;
+            }
+            .card-text {    
+                form {  
+                    padding-top: 1em;    
+                    margin-top: 2em; 
+                    .form-group{
+                        label{
+                            font-family: cursive;
+                            font-weight: 500;
+                        }
+                        input{
+                         box-sizing: border-box; 
+                         -webkit-box-sizing: border-box;
+                         -moz-box-sizing: border-box; 
+                         padding: 0.5em;
+                         margin-bottom: 0.2em ;
+                         outline: none;
+                         border: 1px solid #B0CFE0;
+                        } 
+                    }
+                    .emailBox{
+                        margin-bottom: 0.8em;
+                    }
+                    .submitBtn{
+                        margin-top: 0.5em;
+                        .btn {  
+                            font-size: 1em;  
+                            margin-top: 1.5em;  
+                            -moz-box-shadow: inset 0px 0.2em 0px 0px #3985B1;
+                            -webkit-box-shadow: inset 0px 0.2px 0px 0px #3985B1;
+                            box-shadow: inset 0px 0.02em 0px 0px #3985B1;
+                            background-color: #216288;
+                            border: 1px solid #17445E;
+                            display: inline-block;
+                            cursor: pointer;
+                            color: #FFFFFF;
+                            padding: 0.8em 1.5em;
+                            text-decoration: none;
+                            font: 0.8em Arial, Helvetica, sans-serif;
+                        }  
+                        .sign-up {  
+                            text-align: center;  
+                            padding: 1.5em 0 0; 
+                            .signUp-link{
+                                color: blue;
+                                cursor: pointer;
+                                z-index: 100;
+                            }
+                        }  
+                    }
+                }  
+            }  
+        }  
+    } 
+    .card{
+        border: none;
+    }  
+}  
+ 

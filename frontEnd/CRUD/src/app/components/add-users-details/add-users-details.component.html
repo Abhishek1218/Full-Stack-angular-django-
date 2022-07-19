@@ -1,0 +1,156 @@
+<div class="global-container">
+    <div class="card login-form">
+        <div class="card-body">
+            <h3 class="card-title text-center">
+                User Details Form
+            </h3>
+            <div class="card-text">
+                <form 
+                    [formGroup]="reactiveForm"
+                    #usersForm = "ngForm"
+                    (ngSubmit)="navigateToHome(usersForm.value)"
+                >
+
+                    <div class="form-group cardSpace">
+                        <label for="exampleInputEmail1">
+                            Enter Email Address
+                        </label>
+                        <input 
+                            type="email"
+                            class="form-control form-control-sm"
+                            aria-describedby="emailHelp"
+                            ngModel
+                            name="Email"
+                            formControlName="Email"
+                        >
+                        <small
+                            class="text-danger"
+                            *ngIf="isSubmitted && formControls.Email.errors"
+                        >
+                            <small *ngIf="formControls.Email.errors.required">
+                                Please Enter your Email
+                            </small>
+                            <small *ngIf="formControls.Email.errors.pattern">
+                                Please enter a valid Email
+                            </small>
+                        </small>
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            Enter name
+                        </label>
+                        <input 
+                            type="Name"
+                            class="form-control form-control-sm"
+                            id="exampleInputPassword1"
+                            name="userName"
+                            ngModel
+                            formControlName="userName"
+                        >
+                        <small
+                            class="text-danger"
+                            *ngIf="isSubmitted && formControls.userName.errors"
+                        >
+                            Please Enter your name
+                        </small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>
+                            Title
+                        </label>
+                        <input 
+                            type="text"
+                            class="form-control form-control-sm"
+                            name="title"
+                            ngModel
+                            formControlName="title"
+                        >
+                        <small
+                            class="text-danger"
+                            *ngIf="isSubmitted && formControls.title.errors"
+                        >
+                                Please Enter your Title
+                        </small>
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            SCOST
+                        </label>
+                        <input 
+                            type="number"
+                            class="form-control form-control-sm"
+                            name="SCOST"
+                            ngModel
+                            formControlName="SCOST"
+                        >
+                        <small
+                            class="text-danger"
+                            *ngIf="isSubmitted && formControls.SCOST.errors"
+                        >
+                            Please Enter SCOST
+                        </small>
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            DCOST
+                        </label>
+                        <input 
+                            type="number"
+                            class="form-control form-control-sm"
+                            name="DCOST"
+                            ngModel
+                            formControlName="DCOST"
+                        >
+                        <small
+                            class="text-danger"
+                            *ngIf="isSubmitted && formControls.DCOST.errors"
+                        >
+                            Please Enter DCOST
+                        </small>
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            SOLD
+                        </label>
+                        <input 
+                            type="number"
+                            class="form-control form-control-sm"
+                            name="SOLD"
+                            ngModel
+                            formControlName="SOLD"
+                        >
+                        <small
+                            class="text-danger"
+                            *ngIf="isSubmitted && formControls.SOLD.errors"
+                        >
+                            Please Enter SOLD value
+                        </small>
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary btn-block"
+                    >
+                        Sign Up
+                    </button>
+
+                    <div class="sign-up">
+                        If your details are already saved
+                        <button
+                            type="submit"
+                            class="btn btn-link"
+                            (click)="navigateToHomePage()"
+                        >
+                            Home Page
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
